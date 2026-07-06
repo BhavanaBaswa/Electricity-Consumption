@@ -1,0 +1,25 @@
+# VS Code
+.vscode/
+
+# OS files
+Thumbs.db
+db.properties
+Desktop.ini
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+ENV/
+.env
+
+# Database files
+*.db
+*.sqlite
+*.sql
