@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Electricity Consumption Analysis</title>
+  <meta name="description" content="Plugging into the Future: An Exploration of Electricity Consumption Patterns (2019-2020)">
+  <meta name="keywords" content="Electricity, Consumption, Data Analysis, Tableau, SQL Server, Flask, India">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <!-- Header Section -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename">Electricity Analytics</h1>
+      </a>
+
+      <!-- Navigation Menu -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#story">Story</a></li>
+          <li><a href="#visualizations">Visualizations</a></li>
+          <li><a href="#workflow">Workflow</a></li>
+          <li><a href="#technologies">Technologies</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#projectsummary">Project Summary</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="#dashboard">View Dashboard</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+            <h1>Electricity Consumption Analysis (2019–2020)</h1>
+            <p>An interactive data analytics project developed using SQL Server, Tableau Public, and Flask to study electricity consumption trends across Indian states before and during the COVID-19 pandemic.</p>
+            <div class="d-flex">
+              <a href="#dashboard" class="btn-get-started">View Dashboard</a>
+              <a href="#story" class="btn-watch-video d-flex align-items-center"><i class="bi bi-bar-chart-line-fill me-2"></i><span>View Story</span></a>
+            </div>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
+            <img src="assets/img/hero-img.png" class="img-fluid animated" alt="Electricity Grid Illustration">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="statistics" class="statistics section light-background">
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-4 text-center">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-card hover-scale">
+              <div class="stat-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <h3>33</h3>
+              <p>States Analyzed</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-card hover-scale">
+              <div class="stat-icon"><i class="bi bi-calendar3"></i></div>
+              <h3>2019–2020</h3>
+              <p>Dataset Duration</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-card hover-scale">
+              <div class="stat-icon"><i class="bi bi-layout-text-window-reverse"></i></div>
+              <h3>4</h3>
+              <p>Interactive Dashboards</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="stat-card hover-scale">
+              <div class="stat-icon"><i class="bi bi-database-fill-gear"></i></div>
+              <h3>30+</h3>
+              <p>SQL Queries Executed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About the Project</h2>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <p>
+              This project explores electricity consumption trends across India using historical electricity consumption data from January 2019 to December 2020.
+            </p>
+            <p>
+              The dataset was stored in SQL Server, analyzed using SQL queries, visualized using Tableau Public, and embedded into a Flask web application.
+            </p>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h4 class="mb-3 text-primary fw-bold">Project Objectives</h4>
+            <ul class="list-unstyled">
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> <span>Analyze electricity consumption trends (2019–2020)</span></li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> <span>Study the impact of the COVID-19 lockdown</span></li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> <span>Compare state-wise and region-wise electricity usage</span></li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> <span>Build interactive dashboards and stories using Tableau</span></li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> <span>Store and analyze data using SQL Server</span></li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> <span>Integrate Tableau dashboards with a Flask web application</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Features Section -->
+    <section id="services" class="services section light-background">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Project Features</h2>
+        <p>Key components and analytical methods applied in the development of this portal.</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative hover-scale w-100 bg-white p-4 rounded-4 shadow-sm border-0">
+              <div class="icon"><i class="bi bi-cloud-download icon text-primary" style="font-size: 2.2rem;"></i></div>
+              <h4 class="fw-bold mt-3">Data Collection</h4>
+              <p class="text-muted">Collected electricity consumption data from reliable sources.</p>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-item position-relative hover-scale w-100 bg-white p-4 rounded-4 shadow-sm border-0">
+          <div class="icon">
+            <i class="bi bi-database-fill text-primary" style="font-size:2.2rem;"></i>
+          </div>
+          <h4 class="fw-bold mt-3">SQL Server Integration</h4>
+          <p class="text-muted">Stored, managed, and queried the dataset using Microsoft SQL Server.</p>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item position-relative hover-scale w-100 bg-white p-4 rounded-4 shadow-sm border-0">
+          <div class="icon">
+            <i class="bi bi-map-fill text-primary" style="font-size:2.2rem;"></i>
+          </div>
+          <h4 class="fw-bold mt-3">Regional Analysis</h4>
+          <p class="text-muted">Compared electricity consumption across different regions and states.</p>
+        </div>
+      </div>
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative hover-scale w-100 bg-white p-4 rounded-4 shadow-sm border-0">
+              <div class="icon"><i class="bi bi-bar-chart-line icon text-primary" style="font-size: 2.2rem;"></i></div>
+              <h4 class="fw-bold mt-3">Interactive Dashboard</h4>
+              <p class="text-muted">Created dashboards using Tableau Public.</p>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="700">
+        <div class="service-item position-relative hover-scale w-100 bg-white p-4 rounded-4 shadow-sm border-0">
+          <div class="icon">
+            <i class="bi bi-journal-richtext text-primary" style="font-size:2.2rem;"></i>
+          </div>
+          <h4 class="fw-bold mt-3">Tableau Story</h4>
+          <p class="text-muted">Presented insights through an interactive Tableau Story with multiple scenes.</p>
+        </div>
+      </div>
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative hover-scale w-100 bg-white p-4 rounded-4 shadow-sm border-0">
+              <div class="icon"><i class="bi bi-braces icon text-primary" style="font-size: 2.2rem;"></i></div>
+              <h4 class="fw-bold mt-3">Flask Integration</h4>
+              <p class="text-muted">Embedded Tableau dashboards into a Flask web application.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Dashboard Section -->
+<section id="dashboard" class="dashboard section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Interactive Dashboard</h2>
+    <p>
+      Explore the interactive Tableau dashboard to analyze electricity
+      consumption patterns across Indian states from 2019 to 2020. The
+      dashboard provides insights into state-wise, region-wise, monthly,
+      quarterly, and yearly electricity consumption through interactive
+      visualizations and filters.
+    </p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+
+        <div class="card border-0 shadow-lg rounded-4 overflow-hidden mb-5">
+          <div class="card-body p-3 bg-white">
+
+            <div class="dashboard-container" style="min-height:850px;">
+
+              <div class="tableauPlaceholder" id="viz_dashboard" style="position:relative">
+
+                <noscript>
+                  <a href="#">
+                    <img alt="Electricity Consumption Dashboard"
+                      src="https://public.tableau.com/static/images/El/Electricity_Consumption_Project_Final_D/Dashboard1/1_rss.png"
+                      style="border:none" />
+                  </a>
+                </noscript>
+
+                <object class="tableauViz" style="display:none;">
+
+                  <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+
+                  <param name="embed_code_version" value="3" />
+
+                  <param name="site_root" value="" />
+
+                  <param name="name"
+                    value="Electricity_Consumption_Project_Final_D/Dashboard1" />
+
+                  <param name="tabs" value="no" />
+
+                  <param name="toolbar" value="yes" />
+
+                  <param name="animate_transition" value="yes" />
+
+                  <param name="display_static_image" value="yes" />
+
+                  <param name="display_spinner" value="yes" />
+
+                  <param name="display_overlay" value="yes" />
+
+                  <param name="display_count" value="yes" />
+
+                  <param name="language" value="en-US" />
+
+                  <param name="filter" value="publish=yes" />
+
+                </object>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="text-center mt-3 mb-5">
+          <a href="https://public.tableau.com/views/Electricity_Consumption_Project_Final_D/Dashboard1"
+             target="_blank"
+             class="btn btn-primary px-5 py-3 rounded-pill shadow">
+            <i class="bi bi-box-arrow-up-right me-2"></i>
+            Open Dashboard on Tableau Public
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script type="text/javascript">
+var divElement = document.getElementById('viz_dashboard');
+var vizElement = divElement.getElementsByTagName('object')[0];
+
+if (divElement.offsetWidth > 800) {
+    vizElement.style.width = '100%';
+    vizElement.style.height = '850px';
+} else if (divElement.offsetWidth > 500) {
+    vizElement.style.width = '100%';
+    vizElement.style.height = '850px';
+} else {
+    vizElement.style.width = '100%';
+    vizElement.style.height = '1400px';
+}
+
+var scriptElement = document.createElement('script');
+scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+    <!-- Interactive Story Section -->
+    <section id="story" class="story section light-background">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Interactive Story</h2>
+        <p>This Tableau Story presents the complete analysis of electricity consumption patterns across India from 2019–2020, highlighting major trends, state-wise comparisons, seasonal variations, and the impact of COVID-19 through an interactive storytelling experience.</p>
+      </div>
+
+      
+    <!-- Tableau Story -->
+<div class="container mt-5" data-aos="fade-up">
+
+  <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+    <div class="card-body p-3">
+
+      <div class="tableauPlaceholder" id="vizStory" style="position: relative">
+
+        <noscript>
+          <a href="#">
+            <img alt="Story on Electricity Consumption Analysis (2019–2020)"
+                 src="https://public.tableau.com/static/images/El/Electricity_Consumption_Project_Final/StoryonElectricityConsumptionAnalysis20192020/1_rss.png"
+                 style="border:none" />
+          </a>
+        </noscript>
+
+        <object class="tableauViz" style="display:none;">
+
+          <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+          <param name="embed_code_version" value="3" />
+          <param name="site_root" value="" />
+
+          <param name="name"
+                 value="Electricity_Consumption_Project_Final/StoryonElectricityConsumptionAnalysis20192020" />
+
+          <param name="tabs" value="no" />
+          <param name="toolbar" value="yes" />
+          <param name="animate_transition" value="yes" />
+          <param name="display_static_image" value="yes" />
+          <param name="display_spinner" value="yes" />
+          <param name="display_overlay" value="yes" />
+          <param name="display_count" value="yes" />
+          <param name="language" value="en-US" />
+
+        </object>
+
+      </div>
+      <div class="text-center mt-3 mb-5">
+  <a href="https://public.tableau.com/app/profile/bhavana.shanmukhi.baswa/viz/Electricity_Consumption_Project_Final/StoryonElectricityConsumptionAnalysis20192020?publish=yes"
+     target="_blank"
+     class="btn btn-primary px-5 py-3 rounded-pill shadow">
+    <i class="bi bi-box-arrow-up-right me-2"></i>
+    Open Story on Tableau Public
+  </a>
+</div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+var divElement = document.getElementById('vizStory');
+var vizElement = divElement.getElementsByTagName('object')[0];
+
+vizElement.style.width = "100%";
+vizElement.style.height = "850px";
+
+var scriptElement = document.createElement('script');
+scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+    <!-- Project Workflow Section -->
+<section id="workflow" class="work-process section light-background">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Project Workflow</h2>
+    <p>The step-by-step workflow followed to analyze electricity consumption patterns using SQL Server, Tableau, and Flask.</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+
+      <!-- Step 1 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="workflow-card hover-scale">
+          <div class="workflow-step-num">01</div>
+          <h4 class="fw-bold">Problem Understanding</h4>
+          <p class="text-muted">
+            Defined project objectives and analyzed electricity consumption trends across Indian states from 2019–2020.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="workflow-card hover-scale">
+          <div class="workflow-step-num">02</div>
+          <h4 class="fw-bold">Data Collection</h4>
+          <p class="text-muted">
+            Collected the electricity consumption dataset and verified the data before importing into the database.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="workflow-card hover-scale">
+          <div class="workflow-step-num">03</div>
+          <h4 class="fw-bold">SQL Server Integration</h4>
+          <p class="text-muted">
+            Imported the dataset into Microsoft SQL Server and performed SQL queries for data management.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="workflow-card hover-scale">
+          <div class="workflow-step-num">04</div>
+          <h4 class="fw-bold">Data Preparation</h4>
+          <p class="text-muted">
+            Connected SQL Server with Tableau, validated data types, and prepared the dataset for visualization.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+        <div class="workflow-card hover-scale">
+          <div class="workflow-step-num">05</div>
+          <h4 class="fw-bold">Data Visualization</h4>
+          <p class="text-muted">
+            Developed interactive charts, maps, dashboards, filters, and Tableau stories to analyze electricity usage.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+        <div class="workflow-card hover-scale">
+          <div class="workflow-step-num">06</div>
+          <h4 class="fw-bold">Web Integration</h4>
+          <p class="text-muted">
+            Published dashboards to Tableau Public and embedded them into a Flask web application for interactive access.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="skills section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Technologies Used</h2>
+        <p>The tech stack employed for database storage, analytics, visualization, and deployment.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <!-- Python -->
+          <div class="col-lg-3 col-md-6 col-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="tech-card hover-scale">
+              <div class="tech-icon"><i class="bi bi-code-slash"></i></div>
+              <h5 class="fw-bold">Python</h5>
+              <p class="small text-muted mb-0">Backend servers and script data processing</p>
+            </div>
+          </div>
+          <!-- SQL Server -->
+          <div class="col-lg-3 col-md-6 col-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="tech-card hover-scale">
+              <div class="tech-icon"><i class="bi bi-database-fill"></i></div>
+              <h5 class="fw-bold">SQL Server</h5>
+              <p class="small text-muted mb-0">Relational data storage and querying</p>
+            </div>
+          </div>
+          <!-- Tableau Public -->
+          <div class="col-lg-3 col-md-6 col-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="tech-card hover-scale">
+              <div class="tech-icon"><i class="bi bi-bar-chart-line-fill"></i></div>
+              <h5 class="fw-bold">Tableau Public</h5>
+              <p class="small text-muted mb-0">Interactive visual dashboards</p>
+            </div>
+          </div>
+          <!-- Flask -->
+          <div class="col-lg-3 col-md-6 col-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="tech-card hover-scale">
+              <div class="tech-icon"><i class="bi bi-cpu-fill"></i></div>
+              <h5 class="fw-bold">Flask</h5>
+              <p class="small text-muted mb-0">Lightweight python web framework</p>
+            </div>
+          </div>
+          <!-- HTML5 -->
+          <div class="col-lg-3 col-md-6 col-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="tech-card hover-scale">
+              <div class="tech-icon"><i class="bi bi-filetype-html"></i></div>
+              <h5 class="fw-bold">HTML5</h5>
+              <p class="small text-muted mb-0">Web page structure and skeleton</p>
+            </div>
+          </div>
+          <!-- CSS3 -->
+          <div class="col-lg-3 col-md-6 col-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="tech-card hover-scale">
+              <div class="tech-icon"><i class="bi bi-palette-fill"></i></div>
+              <h5 class="fw-bold">CSS3</h5>
+              <p class="small text-muted mb-0">Custom styles and coloring overrides</p>
+            </div>
+          </div>
+          <!-- Bootstrap -->
+          <div class="col-lg-3 col-md-6 col-6" data-aos="fade-up" data-aos-delay="700">
+            <div class="tech-card hover-scale">
+              <div class="tech-icon"><i class="bi bi-bootstrap-fill"></i></div>
+              <h5 class="fw-bold">Bootstrap</h5>
+              <p class="small text-muted mb-0">Responsive UI grid layout structure</p>
+            </div>
+          </div>
+          <!-- JavaScript -->
+          <div class="col-lg-3 col-md-6 col-6" data-aos="fade-up" data-aos-delay="800">
+            <div class="tech-card hover-scale">
+              <div class="tech-icon"><i class="bi bi-braces"></i></div>
+              <h5 class="fw-bold">JavaScript</h5>
+              <p class="small text-muted mb-0">Interactivity and scroll animations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- Team Section -->
+<section id="team" class="team section light-background">
+
+  <!-- Team Section -->
+<section id="team" class="team section light-background">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Team Members</h2>
+    <p>Meet the team behind the Electricity Consumption Analysis project.</p>
+  </div>
+
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Member 1 -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="team-member d-flex align-items-start bg-white p-4 rounded-4 shadow-sm">
+
+          <div class="pic me-3">
+            <svg class="img-fluid rounded-circle" width="100" height="100" viewBox="0 0 100 100">
+              <rect width="100%" height="100%" fill="#0a1931"/>
+              <circle cx="50" cy="40" r="20" fill="#ffd700"/>
+              <path d="M25 80 C25 60,75 60,75 80" fill="#0d6efd"/>
+            </svg>
+          </div>
+
+          <div class="member-info">
+            <h4>Bhavana Shanmukhi Baswa</h4>
+            <span>Project Team Member</span>
+
+            <p><i class="bi bi-envelope-fill text-primary"></i>
+            bhavanabaswa77@gmail.com</p>
+
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="team-member d-flex align-items-start bg-white p-4 rounded-4 shadow-sm">
+
+          <div class="pic me-3">
+            <svg class="img-fluid rounded-circle" width="100" height="100" viewBox="0 0 100 100">
+              <rect width="100%" height="100%" fill="#0a1931"/>
+              <circle cx="50" cy="40" r="20" fill="#ffd700"/>
+              <path d="M25 80 C25 60,75 60,75 80" fill="#0d6efd"/>
+            </svg>
+          </div>
+
+          <div class="member-info">
+            <h4>Chandrika Bandaru</h4>
+            <span>Project Team Member</span>
+
+            <p><i class="bi bi-envelope-fill text-primary"></i>
+            chandrikabandaru9866@gmail.com</p>
+
+            
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="team-member d-flex align-items-start bg-white p-4 rounded-4 shadow-sm">
+
+          <div class="pic me-3">
+            <svg class="img-fluid rounded-circle" width="100" height="100" viewBox="0 0 100 100">
+              <rect width="100%" height="100%" fill="#0a1931"/>
+              <circle cx="50" cy="40" r="20" fill="#ffd700"/>
+              <path d="M25 80 C25 60,75 60,75 80" fill="#0d6efd"/>
+            </svg>
+          </div>
+
+          <div class="member-info">
+            <h4>Harshitha Vaddadi</h4>
+            <span>Team Lead</span>
+
+            <p><i class="bi bi-envelope-fill text-primary"></i>
+            harshithavaddadi15@gmail.com</p>
+
+            
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="team-member d-flex align-items-start bg-white p-4 rounded-4 shadow-sm">
+
+          <div class="pic me-3">
+            <svg class="img-fluid rounded-circle" width="100" height="100" viewBox="0 0 100 100">
+              <rect width="100%" height="100%" fill="#0a1931"/>
+              <circle cx="50" cy="40" r="20" fill="#ffd700"/>
+              <path d="M25 80 C25 60,75 60,75 80" fill="#0d6efd"/>
+            </svg>
+          </div>
+
+          <div class="member-info">
+            <h4>Ramya Barninkala</h4>
+            <span>Project Team Member</span>
+
+            <p><i class="bi bi-envelope-fill text-primary"></i>
+            ramyabarninkala5@gmail.com</p>
+
+        
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 5 -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
+        <div class="team-member d-flex align-items-start bg-white p-4 rounded-4 shadow-sm">
+
+          <div class="pic me-3">
+            <svg class="img-fluid rounded-circle" width="100" height="100" viewBox="0 0 100 100">
+              <rect width="100%" height="100%" fill="#0a1931"/>
+              <circle cx="50" cy="40" r="20" fill="#ffd700"/>
+              <path d="M25 80 C25 60,75 60,75 80" fill="#0d6efd"/>
+            </svg>
+          </div>
+
+          <div class="member-info">
+            <h4>Sagar Nadisetty</h4>
+            <span>Project Team Member</span>
+
+            <p><i class="bi bi-envelope-fill text-primary"></i>
+            sagarnadisetty2005@gmail.com</p>
+
+          
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+    <!-- Project Summary Section -->
+<section id="projectsummary" class="section light-background">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Project Summary</h2>
+    <p>A brief overview of the Electricity Consumption Analysis project and its outcomes.</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="card border-0 shadow-lg rounded-4 p-5">
+
+      <h3 class="fw-bold text-primary mb-4">
+        Electricity Consumption Analysis (2019–2020)
+      </h3>
+
+      <p class="text-muted" style="text-align:justify; line-height:1.8;">
+        The <strong>Electricity Consumption Analysis</strong> project provides a comprehensive
+        analysis of electricity usage across Indian states and regions from
+        <strong>January 2019 to December 2020</strong>. The project focuses on identifying
+        consumption trends before, during, and after the COVID-19 lockdown
+        through interactive dashboards and data visualizations.
+      </p>
+
+      <p class="text-muted" style="text-align:justify; line-height:1.8;">
+        The dataset was stored and managed using <strong>Microsoft SQL Server</strong>,
+        analyzed using SQL queries, and connected to <strong>Tableau</strong> for creating
+        interactive dashboards, maps, charts, filters, and stories. Finally,
+        the Tableau dashboards were published to <strong>Tableau Public</strong> and
+        integrated into a <strong>Flask</strong> web application to provide an interactive
+        and user-friendly analytical platform.
+      </p>
+
+      <div class="row mt-5 text-center">
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h2 class="text-primary fw-bold">33</h2>
+          <p class="text-muted">States & UTs Analyzed</p>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h2 class="text-primary fw-bold">14</h2>
+          <p class="text-muted">Visualizations</p>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h2 class="text-primary fw-bold">4</h2>
+          <p class="text-muted">Interactive Dashboards</p>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h2 class="text-primary fw-bold">1</h2>
+          <p class="text-muted">Tableau Story</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer id="footer" class="footer">
+    <div class="container footer-top py-5">
+      <div class="row gy-4">
+        <!-- Footer About -->
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename text-black">Electricity Analytics</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <h4>Analysis Period</h4>
+
+<p><strong>Duration:</strong> January 2019 – December 2020</p>
+<p><strong>Coverage:</strong> 33 States & Union Territories</p>
+<p><strong>Focus:</strong> COVID-19 Electricity Consumption Analysis</p>
+          </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4 class="text-white">Quick Navigation</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-chevron-right text-primary me-2"></i> <a href="#hero">Home</a></li>
+            <li class="mb-2"><i class="bi bi-chevron-right text-primary me-2"></i> <a href="#about">About</a></li>
+            <li class="mb-2"><i class="bi bi-chevron-right text-primary me-2"></i> <a href="#dashboard">Dashboard</a></li>
+            <li class="mb-2"><i class="bi bi-chevron-right text-primary me-2"></i> <a href="#story">Story</a></li>
+            <li class="mb-2"><i class="bi bi-chevron-right text-primary me-2"></i> <a href="#visualizations">Visualizations</a></li>
+          </ul>
+        </div>
+
+        <!-- Footer Technologies -->
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4 class="text-white">Technologies Used</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-chevron-right text-primary me-2"></i> <a href="#technologies">SQL Server</a></li>
+            <li class="mb-2"><i class="bi bi-chevron-right text-primary me-2"></i> <a href="#technologies">Tableau Public</a></li>
+            <li class="mb-2"><i class="bi bi-chevron-right text-primary me-2"></i> <a href="#technologies">Flask Framework</a></li>
+            <li class="mb-2"><i class="bi bi-chevron-right text-primary me-2"></i> <a href="#technologies">Python Programming</a></li>
+            <li class="mb-2"><i class="bi bi-chevron-right text-primary me-2"></i> <a href="#technologies">Bootstrap 5</a></li>
+          </ul>
+        </div>
+
+        
+
+    <!-- Copyright -->
+    <div class="container copyright text-center mt-4 border-top pt-4">
+      <p class="mb-0">© 2026 <strong>Electricity Consumption Analysis Project</strong>.</p>
+      <div class="credits text-muted small mt-1">
+        Developed using HTML, Bootstrap, SQL Server, Tableau Public and Flask.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
