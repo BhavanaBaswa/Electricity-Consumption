@@ -1,38 +1,56 @@
 # Plugging into the Future: An Exploration of Electricity Consumption Patterns
 
-This project focuses on analyzing electricity consumption patterns across Indian States and Union Territories from January 2019 to December 2020. The analysis includes the period before, during, and after the COVID-19 lockdown to understand changes in electricity demand.
+## 📌 Project Overview
+Electricity is one of the most important indicators of economic growth and industrial development. This project analyzes electricity consumption patterns across Indian States and Union Territories from **January 2019 to December 2020**, including the impact of the **COVID-19 lockdown**.
 
-The project uses Microsoft SQL Server for data storage and management, Tableau for creating interactive dashboards and stories, and Flask for integrating the Tableau visualizations into a web application.
+The project combines **Microsoft SQL Server**, **Tableau**, and **Flask** to create an interactive analytics platform that enables users to explore electricity consumption through dashboards and visual stories.
 
-## Objectives
-- Analyze electricity consumption across Indian states.
+---
+
+## 🎯 Project Objectives
+- Analyze electricity consumption across Indian States and Union Territories.
 - Compare electricity usage between 2019 and 2020.
-- Study the impact of the COVID-19 lockdown.
-- Perform state-wise and region-wise analysis.
-- Develop interactive dashboards and stories using Tableau.
+- Study the impact of the COVID-19 lockdown on electricity demand.
+- Perform region-wise, month-wise, and quarter-wise analysis.
+- Build interactive dashboards using Tableau.
+- Publish dashboards to Tableau Public.
 - Integrate Tableau dashboards into a Flask web application.
 
-## Technologies Used
+---
+
+## 📂 Dataset
+- **Dataset:** Electricity Consumption Dataset
+- **Coverage:** 33 Indian States & Union Territories
+- **Period:** January 2019 – December 2020
+
+---
+
+## 🛠️ Technology Stack
 - **Language/Frameworks:** Python, Flask
 - **Frontend:** HTML5, CSS3, Bootstrap 5, JavaScript
 - **Data & Visualization:** Microsoft SQL Server, Tableau Desktop, Tableau Public
 - **Version Control:** Git & GitHub
 
-## Project Workflow
+---
+
+## ⚙️ Project Workflow
 1. Problem Understanding
-2. Data Collection
-3. Store Dataset in Microsoft SQL Server
-4. Perform SQL Operations
+2. Dataset Collection
+3. Data Storage in Microsoft SQL Server
+4. SQL Operations
 5. Connect SQL Server with Tableau
 6. Data Preparation
-7. Create Visualizations
-8. Design Interactive Dashboards
+7. Create Interactive Visualizations
+8. Design Dashboards
 9. Create Tableau Story
 10. Publish to Tableau Public
-11. Integrate Dashboard with Flask
-12. Final Testing
+11. Integrate with Flask
+12. Deploy Project
 
-## Visualizations Created
+---
+
+## 📊 Visualizations Created
+The project contains **14 visualizations** including:
 - 2019 State Consumption
 - 2020 State Consumption
 - Total Consumption
@@ -46,33 +64,79 @@ The project uses Microsoft SQL Server for data storage and management, Tableau f
 - Usage Before and During Lockdown
 - Usage by Year
 
-## Dashboard Features
-- Interactive Tableau Dashboards
-- State-wise Analysis & Region-wise Analysis
-- Monthly & Quarterly Trends
-- Lockdown Analysis
-- Top & Bottom State Comparison
-- Interactive Filters
-- Responsive Dashboard Design
+---
 
-## Project Features
-- SQL Server database integration
-- Interactive Tableau visualizations
-- Dashboard and Story creation
-- Tableau Public publishing
-- Flask web application integration
-- Responsive website design
-- User-friendly interface
-- Interactive data filters
+## 📈 Dashboards
+### Dashboard 1
+- 2019 State Consumption
+- 2020 State Consumption
+- Total Region Consumption
+- Total Consumption
 
-## Key Insights
-- Electricity consumption varies significantly across different regions of India.
-- Western and Northern regions recorded higher electricity demand.
-- Electricity consumption dropped during the nationwide COVID-19 lockdown.
-- Electricity demand gradually recovered after lockdown restrictions were relaxed.
-- Monthly and quarterly analysis reveal seasonal consumption trends.
+### Dashboard 2
+- Region-wise State Consumption
+- Top N States
+- Bottom N States
 
-## Folder Structure
+### Dashboard 3
+- Usage by Region
+- Usage Before and During Lockdown
+
+### Dashboard 4
+- 2019 Month-wise Consumption
+- 2020 Month-wise Consumption
+- State-wise Electricity Consumption
+
+---
+
+## 📖 Tableau Story
+The Tableau Story contains **14 story points** explaining:
+- Overall electricity consumption
+- Region-wise analysis
+- Monthly trends
+- Quarterly trends
+- Lockdown impact
+- State-wise comparison
+- Key insights
+
+---
+
+## 🌐 Web Application
+The Tableau dashboards and story are embedded into a **Flask web application** that includes:
+- Home
+- About
+- Project Objectives
+- Project Features
+- Workflow
+- Technology Stack
+- Interactive Dashboard
+- Visualizations
+- Tableau Story
+- Team
+- Project Summary
+
+---
+
+## ✨ Project & Dashboard Features
+- **SQL Server database integration:** Secure and structured data storage.
+- **Interactive Tableau visualizations:** Live embedded charts and filters.
+- **Tableau Story Integration:** Sequential narrative flow for insights.
+- **Responsive design:** Styled with Bootstrap 5 and vanilla CSS.
+- **Interactive filters:** Filter by state, region, year, and timeline.
+- **Custom error pages:** Sleek 404 page for better user experience.
+
+---
+
+## 📌 Key Insights
+- Western Region recorded the highest electricity consumption.
+- Northern Region also showed consistently high electricity demand.
+- Electricity usage dropped significantly during the nationwide lockdown.
+- Electricity demand gradually recovered after restrictions were relaxed.
+- Month-wise and quarter-wise analyses reveal seasonal variations in electricity consumption.
+
+---
+
+## 📂 Folder Structure
 ```
 Project/
 │
@@ -87,26 +151,49 @@ Project/
 └── README.md
 ```
 
-## Project Statistics
+---
+
+## 📊 Project Statistics
 - **Analysis Period:** January 2019 – December 2020
 - **States & Union Territories Analyzed:** 33
 - **Interactive Dashboards:** 4
 - **Tableau Story:** 1
 - **Visualizations:** 14
 
-## Team Members
-- Bhavana Shanmukhi Baswa
-- Harshitha Vaddadi (Team Lead)
-- Chandrika Bandaru
-- Ramya Barninkala
-- Sagar Nadisetty
+---
 
-## Future Enhancements
+## 👥 Team Members
+- **Harshitha Vaddadi** (Team Lead)
+- **Bhavana Shanmukhi Baswa**
+- **Chandrika Bandaru**
+- **Ramya Barninkala**
+- **Sagar Nadisetty**
+
+---
+
+## 🚀 Future Enhancements
 - Real-time electricity consumption analysis
-- Machine learning-based demand prediction
+- Machine Learning-based demand forecasting
+- Interactive user authentication
 - Mobile-responsive dashboard improvements
-- Live API integration
+- API integration for live electricity data
 - Automated report generation
+
+---
+
+## 🔗 Links
+- **Tableau Public Dashboard:** [Bhavana Shanmukhi Baswa on Tableau Public](https://public.tableau.com/app/profile/bhavana.shanmukhi.baswa)
+- **GitHub Repository:** [Electricity-Consumption Repository](https://github.com/BhavanaBaswa/Electricity-Consumption)
+
+---
+
+## 📄 License
+This project is developed for educational and academic purposes as part of a Data Analytics using Tableau Internship Project.
+
+---
+
+## 🙏 Acknowledgement
+We sincerely thank our mentors, faculty members, and SkillWallet for providing the opportunity and guidance to successfully complete this project.
 
 ---
 Developed as part of the *Data Analytics with Tableau* Project.
